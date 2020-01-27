@@ -19,6 +19,23 @@ fun main(args: Array<String>) {
     println(employeeTwo != employeeThree)
     println(employeeTwo !== employeeThree)
 
+    // Bit operators in Kotlin use natural language syntax instead of &, |, ^ operators
+    val x = 0x00101101
+    val y = 0x11011011
+    x or y
+    x and y
+    x xor y
+
+    // Kotlin does not use 'instanceof' - use 'is' and '!is' instead
+    val something: Any = employeeFour
+    if (something is Employee) {
+        // Use the 'as' keyword to explicitly cast reference type.
+        val newEmployee = something as Employee
+        println(newEmployee.name)
+        // Note that Kotlin 'Smart Casting' makes the explicit cast above unnecessary!
+        println(something.name)
+    }
+
     // Either way is fine - Kotlin will infer the type whenever possible
     //var number: Int = 25
     var number = 25
