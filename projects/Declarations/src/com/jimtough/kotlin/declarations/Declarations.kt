@@ -3,6 +3,22 @@ package com.jimtough.kotlin.declarations
 typealias EmployeeSet = Set<Employee>
 
 fun main(args: Array<String>) {
+
+    val employeeOne = Employee("Mary", 1)
+    val employeeTwo = Employee("John", 2)
+    val employeeThree = Employee("John", 2)
+    val employeeFour = employeeTwo
+
+    println(employeeOne == employeeTwo)
+    println(employeeTwo == employeeThree)
+    println(employeeOne.equals(employeeTwo))
+    println(employeeTwo.equals(employeeThree))
+    println(employeeFour === employeeTwo)
+    println(employeeFour != employeeTwo)
+    println(employeeFour !== employeeTwo)
+    println(employeeTwo != employeeThree)
+    println(employeeTwo !== employeeThree)
+
     // Either way is fine - Kotlin will infer the type whenever possible
     //var number: Int = 25
     var number = 25
@@ -34,5 +50,12 @@ fun main(args: Array<String>) {
 }
 
 class Employee(var name: String, val id : Int) {
+
+    override fun equals(obj: Any?): Boolean {
+        if (obj is Employee) {
+            return name == obj.name && id == obj.id
+        }
+        return false
+    }
 
 }

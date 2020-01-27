@@ -11,6 +11,10 @@ Place for my code and notes from this course: https://www.udemy.com/course/kotli
 * Kotlin does not support all Java for loop types, such as for loop with index variable
 * Kotlin has no 'static' keyword
 * Kotlin has no 'new' keyword
+* Kotlin uses triple-equals operator for reference equality
+  * objA === objB (checking if references are the same)
+  * objA == objB  (in Kotlin this is same as objA.equals(objB) in Java)
+
 
 ## Other Kotlin notes
 * Kotlin variables are statically typed.
