@@ -8,6 +8,9 @@ fun main(args: Array<String>) {
     var number = 25
     number = 10
 
+    val names = arrayListOf("John", "Jane", "Mary")
+    println(names[1])
+
     val employees: EmployeeSet
 
     // Cannot change a 'val' after it has been assigned
