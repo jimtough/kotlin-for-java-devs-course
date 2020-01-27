@@ -1,10 +1,14 @@
 package com.jimtough.kotlin.declarations
 
+typealias EmployeeSet = Set<Employee>
+
 fun main(args: Array<String>) {
     // Either way is fine - Kotlin will infer the type whenever possible
     //var number: Int = 25
     var number = 25
     number = 10
+
+    val employees: EmployeeSet
 
     // Cannot change a 'val' after it has been assigned
     val immutableNumber = 30
@@ -24,9 +28,6 @@ fun main(args: Array<String>) {
     } else {
         employee2 = Employee("Mike Watson", 150)
     }
-
-    // Not allowed! Type of 'number' is already set above and cannot be altered.
-    //number = "Hello"
 }
 
 class Employee(var name: String, val id : Int) {
