@@ -20,6 +20,27 @@ fun main() {
     println("Your change is worth the same as ${change*100} pennies")
     println("Employee ${employee1.name} has id ${employee1.id}")
 
+    //------------------------------------------------------------------------------------
+    // 'Raw strings' - also called 'triple-quoted strings'
+    // These do not require escaping of characters that require it in a normal string.
+    val exampleWindowsFilePath = """c:\TEMP\some\path\to\file.txt"""
+    println(exampleWindowsFilePath)
+    // The 'trimMargin()' function will discard the whitespace before the delimiter that
+    // you specify. I used the * character below.
+    val nurseryRhyme = """Humpty Dumpty sat on a wall.
+        *Humpty Dumpty had a great fall.
+        *All the king's horses and all the king's men
+        *couldn't put Humpty together again.""".trimMargin("*")
+    println(nurseryRhyme)
+    // String templates also work
+    val eggName = "Bumpty"
+    val nurseryRhymeWithStringTemplate = """$eggName Dumpty sat on a wall.
+        *$eggName Dumpty had a great fall.
+        *All the king's horses and all the king's men
+        *couldn't put $eggName together again.""".trimMargin("*")
+    println(nurseryRhymeWithStringTemplate)
+    //------------------------------------------------------------------------------------
+
 }
 
 class Employee(var name: String, val id : Int) {
