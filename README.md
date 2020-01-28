@@ -21,6 +21,7 @@ Place for my code and notes from this course: https://www.udemy.com/course/kotli
 * Kotlin uses compile-time type inference. Types are determined by the context in which the variables are used.
 * Keyword 'val' is equivalent of a Java 'final' variable, and 'var' is a non-final variable.
 * Many Kotlin classes are just wrappers for underlying Java classes (such as StringBuilder)
+* Function parameters must explicitly define a type. The type cannot be inferred.
 
 
 ## Kotlin reference material
