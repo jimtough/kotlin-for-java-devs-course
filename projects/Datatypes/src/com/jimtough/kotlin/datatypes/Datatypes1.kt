@@ -30,5 +30,5 @@ fun main(args: Array<String>) {
     val whatever = true
     val whateverResult = DummyClass().isWhatever(whatever)
     println(whateverResult)
-    
+
 }
