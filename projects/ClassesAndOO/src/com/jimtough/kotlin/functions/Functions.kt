@@ -35,6 +35,12 @@ fun main(): Unit {
     // You can even add some more objects after the unpacked array elements!
     printCarsVarargOnly(*arrayOfCars, car4)
 
+    // Compare utility function versus 'extension function'
+    println(upperFirstAndLast("mordor"))
+    println("hobbiton".capitalizeFirstAndLast())
+
+    println(labelMultiplyInline(9, 9, "Result of my inline multiple function is: "))
+
 }
 
 // The return type comes at the end of the method signature, following a colon
@@ -81,3 +87,25 @@ fun printCarsVarargOnly(vararg cars: Car) {
 }
 
 data class Car(val color: String, val model: String, val year: Int)
+
+// Traditional utility function...
+fun upperFirstAndLast(str: String): String {
+    val upperFirst = str.substring(0, 1).toUpperCase() + str.substring(1)
+    return upperFirst.substring(0, upperFirst.length - 1) +
+            upperFirst.substring(upperFirst.length - 1, upperFirst.length).toUpperCase()
+}
+
+// Same code as function above, but implemented as an 'extension function'.
+// It will appear to be associated with the String class, but does not actually 'extend' the String class.
+// NOTE:
+//   - 'String.' tells compiler what class you want function associated with
+//   - 'str' parameter is gone, because you now invoke this method ON a String object!
+//   - Use 'this' in the function body to refer to the String object
+fun String.capitalizeFirstAndLast(): String {
+    val upperFirst = this.substring(0, 1).toUpperCase() + this.substring(1)
+    return upperFirst.substring(0, upperFirst.length - 1) +
+            upperFirst.substring(upperFirst.length - 1, upperFirst.length).toUpperCase()
+}
+
+// A (silly) inline function, for example only
+inline fun labelMultiplyInline(operandA: Int, operandB: Int, label: String) = "$label ${operandA * operandB}"
