@@ -1,7 +1,7 @@
 package com.jimtough.kotlin.inheritance
 
 fun main() {
-    val laserPrinter = LaserPrinter("Samsung XYZ123")
+    val laserPrinter = SpecialLaserPrinter("Samsung XYZ123")
     laserPrinter.printModel()
 }
 
@@ -15,11 +15,32 @@ open abstract class Printer(val modelName: String) {
 
 }
 
-class LaserPrinter(modelName: String): Printer(modelName) {
+open class LaserPrinter(modelName: String, someOtherParam: Int): Printer(modelName) {
 
-    // In Kotlin, 'override' is a keyword and not just an annotation like in Java
-    override fun printModel() = println("The model name of this LASER printer is $modelName")
+    // In Kotlin, 'override' is a keyword and not just an annotation like in Java.
+    // The 'override' keyword also implicitly makes this function 'open', so it must
+    // be declared 'final' if you want to prevent any other subclasses from overriding it.
+    final override fun printModel() = println("The model name of this LASER printer is $modelName")
     // dumb function implementation for example purposes...
     override fun bestSellingPrice(): Double = 129.99
 
 }
+
+// Notice how the 'someOtherParam' added to the primary constructor of the parent class forces
+// this class to provide a value (I used zero). This is similar to Java.
+class SpecialLaserPrinter(modelName: String) : LaserPrinter(modelName, 0) {
+
+    // This is now prevented, because parent class explicitly marked function as 'final'
+    //override fun printModel() = println("my way, or the HIGHWAY!")
+
+}
+
+//-------------------------------------------------------------------
+
+
+
+
+
+
+
+
