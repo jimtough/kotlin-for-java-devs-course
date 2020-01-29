@@ -1,5 +1,6 @@
 package com.jimtough.kotlin.packagethatdoesnotmatch.the.dir.structure
 
+import com.jimtough.kotlin.imports.internalTopLevelFunction
 import com.jimtough.kotlin.inheritance.LaserPrinter
 import com.jimtough.kotlin.inheritance.Printer
 
@@ -8,5 +9,7 @@ fun main() {
 
     val p: Printer = LaserPrinter("Ploptastic P101", 2)
     p.printModel()
+
+    internalTopLevelFunction("This string comes from Imports.kt")
 
 }
