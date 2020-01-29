@@ -22,7 +22,8 @@ Place for my code and notes from this course: https://www.udemy.com/course/kotli
 * Keyword 'val' is equivalent of a Java 'final' variable, and 'var' is a non-final variable.
 * Many Kotlin classes are just wrappers for underlying Java classes (such as StringBuilder)
 * Function parameters must explicitly define a type. The type cannot be inferred.
-
+* How to properly structure modules is not made clear in the course. Their example shows one module nested inside another. I don't know if that is a typical real world use case.
+  * Module dependencies seems to be defined in the IntelliJ .iml file, and not part of the source code.
 
 ## Kotlin reference material
 

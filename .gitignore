@@ -26,5 +26,5 @@ projects/Datatypes/.idea/
 projects/Datatypes/out/production/Datatypes/META-INF/Datatypes.kotlin_module
 projects/Datatypes/Datatypes.iml
 projects/ClassesAndOO/.idea/
-projects/ClassesAndOO/ClassesAndOO.iml
 projects/ClassesAndOO/out/production/ClassesAndOO/META-INF/ClassesAndOO.kotlin_module
+projects/ClassesAndOO/out/production/AnotherModule/META-INF/AnotherModule.kotlin_module
