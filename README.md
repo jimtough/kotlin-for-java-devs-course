@@ -24,6 +24,7 @@ Place for my code and notes from this course: https://www.udemy.com/course/kotli
 * Function parameters must explicitly define a type. The type cannot be inferred.
 * How to properly structure modules is not made clear in the course. Their example shows one module nested inside another. I don't know if that is a typical real world use case.
   * Module dependencies seems to be defined in the IntelliJ .iml file, and not part of the source code.
+* Generics in Kotlin also suffer from erasure at runtime, just like Java
 
 ## Kotlin reference material
 
